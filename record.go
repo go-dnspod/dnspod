@@ -110,7 +110,8 @@ func (p *RecordAPI) List(domain string) (list []Record, err error) {
 		Status  Status   `json:"status"`
 		Records []Record `json:"records"`
 	}
-	if err = json.Unmarshal(res, &list); err != nil {
+	// fmt.Println(string(res))
+	if err = json.Unmarshal(res, &jsonRes); err != nil {
 		return
 	}
 	if jsonRes.Status.Code != 1 {
