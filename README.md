@@ -37,9 +37,9 @@ func main() {
 	fmt.Printf("Create success! Record ID:%d\r\n", recordID)
 }
 ```
-##More Examples
+## More Examples
 You can find a complete DDNS client source code in **example/ddns** directory.
-##License
+## License
 This library is under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 
