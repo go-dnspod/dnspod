@@ -1,13 +1,17 @@
 package dnspod
 
 import (
+	"crypto/tls"
 	"net/http"
 	"regexp"
 )
 
 //NewDnspod creates and initializes a new Dnspod instance
 func NewDnspod(loginToken string) *Dnspod {
-	hc := &http.Client{}
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
+	hc := &http.Client{Transport: tr}
 	R := RecordAPI{
 		loginToken: loginToken,
 		client:     hc,
